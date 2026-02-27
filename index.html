@@ -398,6 +398,7 @@ footer a { color: var(--pink); text-decoration: none; }
   <a href="#projects" onclick="document.getElementById('mob').classList.remove('open')">Projects</a>
   <a href="#about" onclick="document.getElementById('mob').classList.remove('open')">About</a>
   <a href="#contact" onclick="document.getElementById('mob').classList.remove('open')">Get in Touch</a>
+  <a href="#articles" onclick="document.getElementById('mob').classList.remove('open')">Articles</a>
 </div>
 
 <nav>
@@ -408,6 +409,7 @@ footer a { color: var(--pink); text-decoration: none; }
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#articles">Articles</a></li>
     <li><a href="#contact">Get in Touch</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('mob').classList.add('open')">
@@ -424,9 +426,9 @@ footer a { color: var(--pink); text-decoration: none; }
     <p class="hero-bio">Product manager across e-commerce, payments, and fintech, with deep experience building and commercializing transaction platforms. I've scaled checkout, QR payments, and voucher ecosystems that drive measurable growth while maintaining strong platform reliability.</p>
 
     <div class="hero-contact">
-      <a href="/cdn-cgi/l/email-protection#abcacfc2dfdfc285989bebccc6cac2c785c8c4c6">
+      <a href="mailto:aditti.30@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span class="__cf_email__" data-cfemail="08696c617c7c61263b38486f65696164266b6765">[email&#160;protected]</span>
+        aditti.30@gmail.com
       </a>
       <a href="tel:+6586727400">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.61-.61a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
@@ -1170,6 +1172,122 @@ footer a { color: var(--pink); text-decoration: none; }
   </div>
 </div>
 
+<!-- ── ARTICLES ── -->
+<style>
+.articles-carousel-wrap {
+  position: relative;
+}
+.articles-carousel {
+  display: flex; gap: 20px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-bottom: 16px; cursor: grab;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.articles-carousel::-webkit-scrollbar { display: none; }
+.articles-carousel.grabbing { cursor: grabbing; }
+
+.article-card {
+  border: var(--border); box-shadow: var(--shadow-lg);
+  overflow: hidden; display: flex; flex-direction: column;
+  text-decoration: none; color: var(--dark);
+  transition: transform .2s, box-shadow .2s;
+  background: var(--white);
+  min-width: 300px; max-width: 300px;
+  scroll-snap-align: start; flex-shrink: 0;
+}
+.article-card:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--dark); }
+.article-img {
+  height: 72px; display: flex; align-items: center; justify-content: center;
+  border-bottom: var(--border); flex-shrink: 0;
+}
+.article-img svg { opacity: .45; }
+.article-body { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.article-tag {
+  display: inline-block; font-size: .65rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  border: var(--border); padding: 2px 8px;
+  box-shadow: 2px 2px 0 var(--dark); background: var(--tan);
+  align-self: flex-start;
+}
+.article-title {
+  font-family: var(--heading); font-size: .9rem; line-height: 1.35;
+}
+.article-summary {
+  font-size: .82rem; line-height: 1.65; color: #4a4038; flex: 1;
+}
+.article-read {
+  font-size: .75rem; font-weight: 600; letter-spacing: .06em;
+  color: var(--dark); margin-top: 6px; display: inline-flex; align-items: center; gap: 4px;
+}
+.carousel-nav {
+  display: flex; gap: 10px; justify-content: flex-end; margin-top: 16px;
+}
+.carousel-btn {
+  width: 40px; height: 40px; border: var(--border); box-shadow: var(--shadow);
+  background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; transition: transform .15s, box-shadow .15s;
+}
+.carousel-btn:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-lg); }
+</style>
+
+<div class="sec-wrap" id="articles">
+  <div class="reveal">
+    <div class="banner-row">
+      <div class="banner-line"></div>
+      <div class="banner-label">Writing</div>
+    </div>
+    <div class="sec-title">Articles</div>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="articles-carousel-wrap reveal">
+    <div class="articles-carousel" id="articlesCarousel">
+
+      <a href="https://www.linkedin.com/pulse/payment-optimization-where-checkout-truly-drives-revenue-aditi-rathi-v8dcc/" target="_blank" class="article-card">
+        <div class="article-img" style="background:var(--blue);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+        </div>
+        <div class="article-body">
+          <div class="article-tag">Payments</div>
+          <h3 class="article-title">Payment Optimization: Where Checkout Truly Drives Revenue</h3>
+          <p class="article-summary">A deep-dive into how payment optimization goes beyond reducing failures — exploring the strategic levers at checkout that directly impact GMV, conversion, and customer trust.</p>
+          <span class="article-read">Read on LinkedIn →</span>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/pulse/3ds-optimization-reducing-friction-without-increasing-aditi-rathi-un1wc/" target="_blank" class="article-card">
+        <div class="article-img" style="background:var(--purple);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="article-body">
+          <div class="article-tag">Checkout</div>
+          <h3 class="article-title">3DS Optimization: Reducing Friction Without Increasing Risk</h3>
+          <p class="article-summary">How to navigate the tension between strong customer authentication and seamless checkout — practical strategies for reducing 3DS drop-off while keeping fraud risk in check.</p>
+          <span class="article-read">Read on LinkedIn →</span>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/pulse/cart-checkout-conversion-engine-you-cant-afford-ignore-aditi-rathi-jgxdc/" target="_blank" class="article-card">
+        <div class="article-img" style="background:var(--pink);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        </div>
+        <div class="article-body">
+          <div class="article-tag">Ecommerce</div>
+          <h3 class="article-title">Cart to Checkout: The Conversion Engine You Can't Afford to Ignore</h3>
+          <p class="article-summary">Why the cart-to-checkout journey is one of the most underinvested surfaces in ecommerce — and how treating it as a conversion engine unlocks significant revenue impact.</p>
+          <span class="article-read">Read on LinkedIn →</span>
+        </div>
+      </a>
+
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn" onclick="scrollCarousel(-1)">←</button>
+      <button class="carousel-btn" onclick="scrollCarousel(1)">→</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── CONTACT ── -->
 <div id="contact">
   <div class="sec-wrap">
@@ -1184,9 +1302,9 @@ footer a { color: var(--pink); text-decoration: none; }
     <div class="c-box reveal">
       <h2>Let's Connect</h2>
       <p>Open to Senior PM / Staff PM opportunities in Singapore. Require Letter of Consent only. Available to discuss ecommerce, agentic commerce, fintech, payments, platform products, or any exciting new challenges.</p>
-      <a href="/cdn-cgi/l/email-protection#fd9c9994898994d3cecdbd9a909c9491d39e9290" class="c-btn">
+      <a href="mailto:aditti.30@gmail.com" class="c-btn">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span class="__cf_email__" data-cfemail="87e6e3eef3f3eea9b4b7c7e0eae6eeeba9e4e8ea">[email&#160;protected]</span>
+        aditti.30@gmail.com
       </a>
       <div class="socials">
         <a href="tel:+6586727400" class="s-btn blue">
@@ -1210,6 +1328,29 @@ footer a { color: var(--pink); text-decoration: none; }
 
 
 <script>
+function scrollCarousel(dir) {
+  const c = document.getElementById('articlesCarousel');
+  c.scrollBy({ left: dir * 320, behavior: 'smooth' });
+}
+
+// Drag to scroll
+const carousel = document.getElementById('articlesCarousel');
+if (carousel) {
+  let isDown = false, startX, scrollLeft;
+  carousel.addEventListener('mousedown', e => {
+    isDown = true; carousel.classList.add('grabbing');
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+  carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('grabbing'); });
+  carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('grabbing'); });
+  carousel.addEventListener('mousemove', e => {
+    if (!isDown) return; e.preventDefault();
+    const x = e.pageX - carousel.offsetLeft;
+    carousel.scrollLeft = scrollLeft - (x - startX);
+  });
+}
+
 function projToggle(el) {
   const section = el.closest('.proj-section');
   if (section) section.classList.toggle('open');
