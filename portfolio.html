@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aditi Rathi | Senior Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --dark: #1a1410;
+  --blue: #a8d8e8;
+  --purple: #c9b8e8;
+  --pink: #e8a8b8;
+  --tan: #d4c4a8;
+  --white: #fafafa;
+  --border: 2.5px solid #1a1410;
+  --shadow: 4px 4px 0px #1a1410;
+  --shadow-lg: 6px 6px 0px #1a1410;
+  --heading: 'Archivo Black', sans-serif;
+  --body: 'Archivo', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  color: var(--dark);
+  font-family: var(--body);
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #f5ede0 0%, #ede0f0 35%, #ddeaf5 65%, #f0ead8 100%);
+  background-attachment: fixed;
+}
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  border-bottom: var(--border);
+  padding: 0 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+  background: linear-gradient(90deg, #f5ede0, #ede0f0, #ddeaf5, #f0ead8);
+  background-size: 300%;
+  animation: gradShift 10s ease infinite;
+}
+@keyframes gradShift { 0%{background-position:0%} 50%{background-position:100%} 100%{background-position:0%} }
+.logo {
+  display: flex; align-items: center; justify-content: center;
+  width: 50px; height: 50px;
+  border: var(--border); background: var(--purple);
+  font-family: var(--heading); font-size: 1rem;
+  text-decoration: none; color: var(--dark);
+  box-shadow: var(--shadow);
+  transition: transform .15s, box-shadow .15s;
+}
+.logo:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-lg); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: var(--body); font-weight: 600; font-size: .8rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--dark); text-decoration: none; transition: color .2s;
+}
+.nav-links a:hover { color: #6a3a5a; }
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.hamburger span { display: block; width: 26px; height: 2px; background: var(--dark); }
+
+/* MOBILE MENU */
+.mob-menu {
+  display: none; position: fixed; inset: 0; z-index: 999;
+  background: linear-gradient(135deg,#f5ede0,#ede0f0);
+  flex-direction: column; align-items: center; justify-content: center; gap: 40px;
+}
+.mob-menu.open { display: flex; }
+.mob-menu a { font-family: var(--heading); font-size: 2.5rem; color: var(--dark); text-decoration: none; }
+.mob-close { position: absolute; top: 24px; right: 36px; background: none; border: none; font-family: var(--heading); font-size: 2rem; cursor: pointer; }
+
+/* HERO */
+#hero {
+  min-height: calc(100vh - 72px);
+  max-width: 1300px; margin: 0 auto;
+  padding: 60px 60px 80px;
+  display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: center;
+}
+.tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+.pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  border: var(--border); border-radius: 50px;
+  padding: 7px 16px; font-size: .75rem; font-weight: 600;
+  letter-spacing: .08em; text-transform: uppercase;
+  box-shadow: var(--shadow); cursor: default;
+  transition: transform .15s, box-shadow .15s;
+}
+.pill:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-lg); }
+.pill svg { width: 14px; height: 14px; }
+.pill.blue { background: var(--blue); }
+.pill.purple { background: var(--purple); }
+.pill.pink { background: var(--pink); }
+.pill.tan { background: var(--tan); }
+
+.hero-name {
+  font-family: var(--heading);
+  font-size: clamp(3.5rem, 7.5vw, 7rem);
+  line-height: .92; letter-spacing: -.02em; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero-role {
+  font-family: var(--heading); font-size: 1.05rem;
+  letter-spacing: .05em; text-transform: uppercase; margin-bottom: 18px;
+}
+.hero-bio { font-size: 1rem; line-height: 1.8; max-width: 560px; color: #3a3028; }
+.hero-contact {
+  display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px;
+}
+.hero-contact a {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: .8rem; font-weight: 600; letter-spacing: .06em;
+  text-decoration: none; color: var(--dark);
+  border: var(--border); box-shadow: var(--shadow);
+  padding: 9px 16px; background: var(--white);
+  transition: transform .15s, box-shadow .15s;
+}
+.hero-contact a:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-lg); }
+.hero-contact a svg { width: 13px; height: 13px; }
+.scroll-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border: var(--border); border-radius: 50%;
+  background: none; box-shadow: var(--shadow); margin-top: 32px;
+  cursor: pointer; animation: bob 2s ease-in-out infinite;
+  transition: box-shadow .15s;
+}
+.scroll-btn:hover { box-shadow: var(--shadow-lg); }
+@keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(7px)} }
+.photo-col { display: flex; align-items: center; justify-content: center; }
+.photo-frame {
+  width: 340px; height: 420px; border: var(--border);
+  border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-lg);
+}
+.photo-placeholder {
+  width:100%; height:100%;
+  background: linear-gradient(160deg,#2a2020,#4a3a38,#1a1410);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; color: #777; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+}
+.photo-placeholder svg { opacity: .35; width: 56px; height: 56px; }
+
+/* MARQUEE */
+.marquee-bar {
+  border-top: var(--border); border-bottom: var(--border);
+  background: var(--dark); padding: 13px 0; overflow: hidden;
+}
+.marquee-track {
+  display: flex; white-space: nowrap;
+  animation: scroll 22s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-item {
+  display: inline-flex; align-items: center; gap: 20px;
+  font-family: var(--heading); font-size: .82rem;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: #f0ebe0; padding: 0 28px; flex-shrink: 0;
+}
+.star { color: var(--pink); }
+@keyframes scroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* SECTION WRAPPER */
+.sec-wrap { padding: 80px 60px; max-width: 1300px; margin: 0 auto; }
+
+/* SLANTED RIBBON BANNER */
+.banner-row {
+  position: relative;
+  height: 52px;
+  margin-bottom: 48px;
+  overflow: visible;
+}
+.banner-line {
+  position: absolute;
+  left: -120px; right: -120px;
+  height: 32px;
+  top: 50%; transform: translateY(-50%) rotate(-1.8deg);
+  background: var(--pink);
+  border-top: var(--border);
+  border-bottom: var(--border);
+}
+.banner-label {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--blue);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 7px 22px;
+  font-family: var(--heading);
+  font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; white-space: nowrap;
+  z-index: 2;
+}
+.sec-title { font-family: var(--heading); font-size: clamp(2rem,4vw,3rem); text-align: center; margin-bottom: 10px; }
+.sec-line { width: 80px; height: 4px; background: var(--pink); border: var(--border); margin: 0 auto 52px; }
+
+/* EXPERTISE CARDS */
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.e-card {
+  border: var(--border); box-shadow: var(--shadow-lg);
+  padding: 28px; display: flex; flex-direction: column; gap: 16px;
+  transition: transform .2s, box-shadow .2s;
+}
+.e-card:hover { transform: translate(-4px,-4px); box-shadow: 10px 10px 0 var(--dark); }
+.e-card.blue { background: var(--blue); }
+.e-card.purple { background: var(--purple); }
+.e-card.pink { background: var(--pink); }
+.e-card.tan { background: var(--tan); }
+.icon-box {
+  width: 52px; height: 52px; border: var(--border); background: var(--white);
+  box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.icon-box svg { width: 24px; height: 24px; }
+.e-card h3 { font-family: var(--heading); font-size: .9rem; text-transform: uppercase; letter-spacing: .03em; line-height: 1.3; }
+.e-card p { font-size: .87rem; line-height: 1.7; color: #2a2020; }
+
+/* EXPERIENCE / TIMELINE */
+.exp-list { display: flex; flex-direction: column; gap: 20px; }
+.exp-item {
+  border: var(--border); box-shadow: var(--shadow-lg);
+  overflow: hidden; transition: transform .2s, box-shadow .2s;
+}
+.exp-item:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--dark); }
+.exp-header {
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  padding: 18px 24px; border-bottom: var(--border);
+}
+.exp-header.blue { background: var(--blue); }
+.exp-header.pink { background: var(--pink); }
+.exp-header.purple { background: var(--purple); }
+.exp-header.tan { background: var(--tan); }
+.exp-co { font-family: var(--heading); font-size: 1.1rem; }
+.exp-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.exp-role-tag {
+  font-size: .72rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  border: var(--border); background: var(--white); box-shadow: 2px 2px 0 var(--dark); padding: 4px 10px;
+}
+.exp-date { font-size: .75rem; font-weight: 600; letter-spacing: .06em; }
+.exp-body { padding: 20px 24px; background: var(--white); }
+.exp-body p { font-size: .85rem; color: #3a3028; line-height: 1.7; margin-bottom: 14px; font-style: italic; }
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.exp-bullets li {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: .85rem; line-height: 1.65; color: #2a2020;
+}
+.bullet-dot {
+  width: 8px; height: 8px; border: var(--border); background: var(--pink);
+  flex-shrink: 0; margin-top: 6px;
+}
+.exp-sub-role {
+  display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; background: var(--purple); border: var(--border);
+  padding: 3px 10px; margin-bottom: 12px; box-shadow: 2px 2px 0 var(--dark);
+}
+
+/* ABOUT */
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.a-card { border: var(--border); box-shadow: var(--shadow-lg); overflow: hidden; }
+.a-card.blue { background: var(--blue); }
+.a-card.pink { background: var(--pink); }
+.a-card.tan  { background: var(--tan); }
+.a-header { display: flex; align-items: center; gap: 14px; padding: 18px 24px; border-bottom: var(--border); }
+.a-header h3 { font-family: var(--heading); font-size: .88rem; text-transform: uppercase; letter-spacing: .05em; }
+.a-body { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+.a-item { background: var(--white); border: var(--border); padding: 11px 14px; box-shadow: 3px 3px 0 var(--dark); }
+.a-item-title { font-weight: 600; font-size: .86rem; }
+.a-item-sub { font-size: .76rem; color: #5a5050; margin-top: 2px; }
+.a-item-row { display: flex; align-items: center; gap: 8px; }
+.a-item-row span:first-child { font-size: 1rem; }
+
+/* PROJECTS */
+.grid-3p { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.p-card {
+  border: var(--border); box-shadow: var(--shadow-lg);
+  overflow: hidden; display: flex; flex-direction: column;
+  text-decoration: none; color: var(--dark);
+  transition: transform .2s, box-shadow .2s;
+}
+.p-card:hover { transform: translate(-4px,-4px); box-shadow: 10px 10px 0 var(--dark); }
+.p-top {
+  padding: 20px; display: flex; align-items: flex-start; justify-content: space-between;
+  border-bottom: var(--border);
+}
+.p-top.blue { background: var(--blue); }
+.p-top.pink { background: var(--pink); }
+.p-top.tan  { background: var(--tan); }
+.p-top.purple { background: var(--purple); }
+.arr-btn {
+  width: 40px; height: 40px; border: var(--border);
+  background: var(--white); box-shadow: var(--shadow);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: transform .2s;
+}
+.p-card:hover .arr-btn { transform: rotate(-45deg) translate(2px,-2px); }
+.p-body { padding: 24px; background: var(--white); flex: 1; }
+.p-body h3 { font-family: var(--heading); font-size: 1rem; line-height: 1.3; margin-bottom: 12px; }
+.p-body p { font-size: .85rem; line-height: 1.7; color: #3a3028; }
+.p-stat {
+  display: inline-block; font-family: var(--heading); font-size: .8rem;
+  background: var(--pink); border: var(--border); padding: 4px 10px;
+  box-shadow: 2px 2px 0 var(--dark); margin-top: 14px; margin-right: 6px;
+}
+.p-stat.blue { background: var(--blue); }
+.p-stat.purple { background: var(--purple); }
+.p-stat.tan { background: var(--tan); }
+
+/* AWARDS */
+.awards-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+.award-card {
+  border: var(--border); box-shadow: var(--shadow-lg);
+  padding: 24px; display: flex; flex-direction: column; gap: 10px;
+  transition: transform .2s, box-shadow .2s;
+}
+.award-card:hover { transform: translate(-3px,-3px); box-shadow: 9px 9px 0 var(--dark); }
+.award-card.blue { background: var(--blue); }
+.award-card.pink { background: var(--pink); }
+.award-card.purple { background: var(--purple); }
+.award-card.tan { background: var(--tan); }
+.award-emoji { font-size: 1.8rem; }
+.award-title { font-family: var(--heading); font-size: .88rem; text-transform: uppercase; line-height: 1.3; }
+.award-sub { font-size: .8rem; color: #3a3028; }
+
+/* CONTACT */
+#contact { padding: 80px 60px; max-width: 1300px; margin: 0 auto; }
+.c-box {
+  border: var(--border); box-shadow: var(--shadow-lg); background: var(--white);
+  padding: 60px; max-width: 640px; margin: 0 auto; text-align: center;
+}
+.c-box h2 { font-family: var(--heading); font-size: 2.2rem; margin-bottom: 14px; }
+.c-box p { font-size: 1rem; color: #3a3028; line-height: 1.7; margin-bottom: 30px; }
+.c-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--dark); color: #f0ebe0;
+  border: var(--border); box-shadow: var(--shadow);
+  padding: 15px 32px; font-family: var(--heading); font-size: .88rem;
+  text-transform: uppercase; letter-spacing: .08em; text-decoration: none;
+  transition: transform .15s, box-shadow .15s;
+}
+.c-btn:hover { transform: translate(-3px,-3px); box-shadow: var(--shadow-lg); }
+.socials { display: flex; justify-content: center; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+.s-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: var(--border); box-shadow: var(--shadow);
+  padding: 10px 18px; font-size: .76rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  text-decoration: none; color: var(--dark);
+  transition: transform .15s, box-shadow .15s;
+}
+.s-btn:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-lg); }
+.s-btn.blue { background: var(--blue); }
+.s-btn.pink { background: var(--pink); }
+.s-btn.purple { background: var(--purple); }
+.s-btn svg { width: 14px; height: 14px; }
+
+/* FOOTER */
+footer {
+  border-top: var(--border); background: var(--dark); color: #f0ebe0;
+  padding: 22px 60px; display: flex; align-items: center; justify-content: space-between;
+  font-size: .8rem; letter-spacing: .06em;
+}
+footer a { color: var(--pink); text-decoration: none; }
+
+/* REVEAL */
+.reveal { opacity: 1; transform: translateY(0); transition: opacity .7s ease, transform .7s ease; }
+.reveal.hidden { opacity: 0; transform: translateY(32px); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .grid-4 { grid-template-columns: repeat(3,1fr) !important; }
+  .awards-grid { grid-template-columns: repeat(2,1fr); }
+  .grid-3, .grid-3p { grid-template-columns: 1fr; }
+  #hero { grid-template-columns: 1fr; }
+  .photo-col { display: none; }
+}
+@media(max-width:700px){
+  #hero, .sec-wrap, #contact { padding-left: 24px; padding-right: 24px; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .grid-4, .awards-grid { grid-template-columns: 1fr; }
+  .hero-name { font-size: 3rem; }
+  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
+  .exp-header { flex-direction: column; align-items: flex-start; }
+  .exp-meta { align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="mob-menu" id="mob">
+  <button class="mob-close" onclick="document.getElementById('mob').classList.remove('open')">✕</button>
+  <a href="#hero" onclick="document.getElementById('mob').classList.remove('open')">Home</a>
+  <a href="#expertise" onclick="document.getElementById('mob').classList.remove('open')">Expertise</a>
+  <a href="#experience" onclick="document.getElementById('mob').classList.remove('open')">Experience</a>
+  <a href="#projects" onclick="document.getElementById('mob').classList.remove('open')">Projects</a>
+  <a href="#about" onclick="document.getElementById('mob').classList.remove('open')">About</a>
+  <a href="#contact" onclick="document.getElementById('mob').classList.remove('open')">Get in Touch</a>
+</div>
+
+<nav>
+  <a href="#hero" class="logo">AR</a>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Get in Touch</a></li>
+  </ul>
+  <button class="hamburger" onclick="document.getElementById('mob').classList.add('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div>
+
+    <h1 class="hero-name">ADITI<br>RATHI</h1>
+    <p class="hero-role">Staff Product Manager · Digital Commerce, Payments and Fintech</p>
+    <p class="hero-bio">Product manager across e-commerce, payments, and fintech, with deep experience building and commercializing transaction platforms. I've scaled checkout, QR payments, and voucher ecosystems that drive measurable growth while maintaining strong platform reliability.</p>
+
+    <div class="hero-contact">
+      <a href="/cdn-cgi/l/email-protection#abcacfc2dfdfc285989bebccc6cac2c785c8c4c6">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="__cf_email__" data-cfemail="08696c617c7c61263b38486f65696164266b6765">[email&#160;protected]</span>
+      </a>
+      <a href="tel:+6586727400">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.61-.61a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        +65 8672 7400
+      </a>
+    </div>
+
+    <button class="scroll-btn" onclick="document.getElementById('expertise').scrollIntoView({behavior:'smooth'})">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1410" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+    </button>
+  </div>
+  <div class="photo-col">
+    <div class="photo-frame">
+      <div class="photo-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Your Photo
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span class="marquee-item">Hands-On Builder <span class="star">★</span></span>
+    <span class="marquee-item">Data-Driven Decisions <span class="star">★</span></span>
+    <span class="marquee-item">Omni-Channel User Experience <span class="star">★</span></span>
+    <span class="marquee-item">Digital Commerce <span class="star">★</span></span>
+    <span class="marquee-item">Conversion Rate Optimisation <span class="star">★</span></span>
+    <span class="marquee-item">Payments &amp; Fintech <span class="star">★</span></span>
+    <span class="marquee-item">Cross-Functional Execution <span class="star">★</span></span>
+    <span class="marquee-item">AI &amp; Experimentation <span class="star">★</span></span>
+    <span class="marquee-item">Scaling Consumer Experiences <span class="star">★</span></span>
+    <span class="marquee-item">Hands-On Builder <span class="star">★</span></span>
+    <span class="marquee-item">Data-Driven Decisions <span class="star">★</span></span>
+    <span class="marquee-item">Omni-Channel User Experience <span class="star">★</span></span>
+    <span class="marquee-item">Digital Commerce <span class="star">★</span></span>
+    <span class="marquee-item">Conversion Rate Optimisation <span class="star">★</span></span>
+    <span class="marquee-item">Payments &amp; Fintech <span class="star">★</span></span>
+    <span class="marquee-item">Cross-Functional Execution <span class="star">★</span></span>
+    <span class="marquee-item">AI &amp; Experimentation <span class="star">★</span></span>
+    <span class="marquee-item">Scaling Consumer Experiences <span class="star">★</span></span>
+  </div>
+</div>
+
+<!-- ── EXPERTISE ── -->
+<div class="sec-wrap" id="expertise">
+  <div class="reveal">
+    <div class="banner-row">
+      <div class="banner-line"></div>
+      <div class="banner-label">What I Do</div>
+    </div>
+    <div class="sec-title">Core Expertise</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="grid-4" style="grid-template-columns: repeat(4,1fr);">
+    <div class="e-card blue reveal">
+      <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+      <h3>Ecommerce Cart–Checkout–Payment</h3>
+      <p>Omni-channel cart-checkout platform strategy, QR payments, payment orchestration, and CRO across digital checkout. Scaled a platform processing ~5mn transactions/month while maintaining strong platform reliability.</p>
+    </div>
+    <div class="e-card purple reveal d1">
+      <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <h3>Platform &amp; Integration</h3>
+      <p>Modular architecture design, BaaS platform enhancements, POS integrations, cross-border remittance corridors, and virtual account (FAST) infrastructure. Expert in vendor and third-party integrations.</p>
+    </div>
+    <div class="e-card pink reveal d2">
+      <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+      <h3>Growth &amp; Gamification</h3>
+      <p>Drove user acquisition growth and retention uplift via optimised voucher journeys, personalisation, and gamification. Launched engagement platform with 2.6x ROI on promotional spend across 300K+ customers.</p>
+    </div>
+    <div class="e-card blue reveal d3">
+      <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+      <h3>Product Commercialisation</h3>
+      <p>End-to-end product lifecycle from conception to GTM — launching new revenue channels, D2C portals, BNPL products, and remittance platforms. Strong track record of taking zero-to-one products to measurable commercial outcomes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── EXPERIENCE ── -->
+<style>
+/* Timeline wrapper */
+.tl-wrap { position: relative; padding-left: 0; }
+
+/* Year group */
+.tl-group { margin-bottom: 8px; }
+
+/* Year toggle button — matches screenshot: pastel bg, bold year, chevron, item count */
+.tl-toggle {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: var(--border); box-shadow: var(--shadow);
+  padding: 10px 20px;
+  font-family: var(--heading); font-size: 1.05rem;
+  cursor: pointer; user-select: none;
+  transition: transform .15s, box-shadow .15s;
+  margin-bottom: 0;
+}
+.tl-toggle:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow-lg); }
+.tl-toggle.c-blue   { background: var(--blue); }
+.tl-toggle.c-purple { background: var(--purple); }
+.tl-toggle.c-pink   { background: var(--pink); }
+.tl-toggle.c-tan    { background: var(--tan); }
+.tl-toggle.c-stone  { background: #d8cfc0; }
+.tl-chevron { font-size: .8rem; transition: transform .3s; }
+.tl-toggle.collapsed .tl-chevron { transform: rotate(-90deg); }
+.tl-count { font-size: .75rem; font-weight: 400; font-family: var(--body); opacity: .7; }
+
+/* The vertical line + items container */
+.tl-items {
+  border-left: var(--border);
+  margin-left: 18px;
+  padding: 10px 0 4px 0;
+  overflow: hidden;
+  transition: max-height .45s ease, opacity .3s ease;
+  max-height: 2000px; opacity: 1;
+}
+.tl-items.collapsed { max-height: 0; opacity: 0; }
+
+/* Each item row */
+.tl-item {
+  display: flex; align-items: flex-start; gap: 0;
+  margin-bottom: 10px;
+}
+/* Dot on the vertical line */
+.tl-dot {
+  width: 12px; height: 12px;
+  border: var(--border); background: var(--dark);
+  border-radius: 50%; flex-shrink: 0;
+  margin-top: 16px; margin-left: -6px; margin-right: 18px;
+}
+/* Card */
+.tl-card {
+  flex: 1; border: var(--border); box-shadow: 3px 3px 0 var(--dark);
+  background: var(--white); padding: 14px 18px;
+  transition: transform .15s, box-shadow .15s;
+}
+.tl-card:hover { transform: translate(-2px,-2px); box-shadow: var(--shadow); }
+.tl-card-name { font-family: var(--heading); font-size: .95rem; margin-bottom: 5px; }
+.tl-card-summary { font-size: .83rem; color: #4a4038; line-height: 1.65; margin-bottom: 8px; }
+.tl-tag {
+  display: inline-block; font-size: .68rem; font-weight: 600;
+  letter-spacing: .09em; text-transform: uppercase;
+  border: var(--border); padding: 2px 9px;
+  box-shadow: 2px 2px 0 var(--dark); margin-right: 6px; margin-top: 2px;
+}
+.tl-tag.blue   { background: var(--blue); }
+.tl-tag.pink   { background: var(--pink); }
+.tl-tag.purple { background: var(--purple); }
+.tl-tag.tan    { background: var(--tan); }
+.tl-tag.stone  { background: #d8cfc0; }
+</style>
+
+<div class="sec-wrap" id="experience">
+  <div class="reveal">
+    <div class="banner-row">
+      <div class="banner-line"></div>
+      <div class="banner-label">Career</div>
+    </div>
+    <div class="sec-title">Experience</div>
+    <div class="sec-line"></div>
+  </div>
+
+  <div class="tl-wrap reveal">
+
+    <!-- 2021–2026 -->
+    <div class="tl-group">
+      <div class="tl-toggle c-blue" onclick="tlToggle(this)">
+        2021–2026 <span class="tl-chevron">∧</span> <span class="tl-count">(1 role)</span>
+      </div>
+      <div class="tl-items">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-name">NTUC FairPrice</div>
+            <div class="tl-card-summary">Led digital product initiatives across e-commerce, omni-channel payments, loyalty, and gamification. Owned and scaled a payment platform processing ~5mn transactions per month, drove checkout CRO delivering ~$3M GMV uplift, scaled POS-integrated QR payments to ~29% of in-store transactions, launched the D2C Voucher Gifting Portal ($1M in six months), and led key Trust Bank tech integration workstreams.</div>
+            <span class="tl-tag blue">Staff Product Manager</span>
+            <span class="tl-tag blue">OMNI COE · Singapore</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 2020 -->
+    <div class="tl-group">
+      <div class="tl-toggle c-pink" onclick="tlToggle(this)">
+        2020 <span class="tl-chevron">∧</span> <span class="tl-count">(1 role)</span>
+      </div>
+      <div class="tl-items">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-name">MatchMove Pay Pte Ltd</div>
+            <div class="tl-card-summary">Built and launched RemitSend — B2B cross-border remittance product (500 SMEs, SGD 2M volume in 4 months). Led BaaS platform enhancements: Virtual Accounts (FAST), MyInfo onboarding, new remittance corridors, and Indonesia wallet stack.</div>
+            <span class="tl-tag pink">Product Manager · Fintech</span>
+            <span class="tl-tag pink">Singapore</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2018–2019 -->
+    <div class="tl-group">
+      <div class="tl-toggle c-purple" onclick="tlToggle(this)">
+        2018–2019 <span class="tl-chevron">∧</span> <span class="tl-count">(1 role)</span>
+      </div>
+      <div class="tl-items">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-name">Home Credit</div>
+            <div class="tl-card-summary">End-to-end ownership of BNPL products for unbanked consumers in India, including launch of a revolving EMI card (50K users in three months, ~60% utilization), co-lending partnerships (₹170 net revenue per transaction), and telecom BNPL bundles. Strengthened customer engagement and collections, driving a 7% MAU uplift and ~10% improvement in cash flow efficiency.</div>
+            <span class="tl-tag purple">Product &amp; Partnerships Manager</span>
+            <span class="tl-tag purple">India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2015–2017 -->
+    <div class="tl-group">
+      <div class="tl-toggle c-tan" onclick="tlToggle(this)">
+        2015–2017 <span class="tl-chevron">∧</span> <span class="tl-count">(1 role)</span>
+      </div>
+      <div class="tl-items">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-name">ICICI Bank</div>
+            <div class="tl-card-summary">Led payments product commercialisation and business strategy for Financial Institution clients — positioning ICICI as a strategic partner for Small Finance and Payment Banks. Drove ~₹600M in revenue and ~₹2.6B in annual NII.</div>
+            <span class="tl-tag tan">Product &amp; Partnerships Manager</span>
+            <span class="tl-tag tan">India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2010–2013 -->
+    <div class="tl-group">
+      <div class="tl-toggle c-stone" onclick="tlToggle(this)">
+        2010–2013 <span class="tl-chevron">∧</span> <span class="tl-count">(1 role)</span>
+      </div>
+      <div class="tl-items">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-name">Contata Solutions</div>
+            <div class="tl-card-summary">Owned platform testing strategy for an ERP startup serving global Oil &amp; Gas clients. Led automation framework reducing release timelines by ~37%. Product later acquired by Emerson Automation Solutions.</div>
+            <span class="tl-tag stone">Test Analyst</span>
+            <span class="tl-tag stone">India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FEATURED PROJECTS ── -->
+<style>
+.proj-co-tag {
+  display: inline-block; font-size: .65rem; font-weight: 600;
+  letter-spacing: .1em; text-transform: uppercase;
+  border: var(--border); padding: 2px 9px;
+  box-shadow: 2px 2px 0 var(--dark);
+  white-space: nowrap; flex-shrink: 0;
+  background: var(--white);
+}
+.proj-section { margin-bottom: 8px; border: var(--border); box-shadow: var(--shadow-lg); overflow: hidden; }
+.proj-section-title {
+  font-family: var(--heading); font-size: clamp(1rem,2vw,1.15rem);
+  display: flex; align-items: center; gap: 14px;
+  padding: 18px 24px; cursor: pointer; user-select: none;
+  background: var(--white);
+  transition: background .2s;
+}
+.proj-section-title:hover { background: #f5f0e8; }
+.proj-section-title .proj-arrow {
+  margin-left: auto; flex-shrink: 0;
+  width: 32px; height: 32px;
+  border: var(--border); box-shadow: 2px 2px 0 var(--dark);
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem;
+  transition: transform .35s ease;
+}
+.proj-section.open .proj-section-title .proj-arrow { transform: rotate(180deg); }
+.proj-section-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height .5s ease, opacity .35s ease;
+  opacity: 0;
+}
+.proj-section.open .proj-section-body { max-height: 3000px; opacity: 1; }
+.proj-section-body-inner { padding: 0 24px 24px; }
+.proj-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; flex-shrink: 0;
+  border: var(--border); box-shadow: var(--shadow);
+  font-family: var(--heading); font-size: .85rem;
+}
+.proj-num.pink   { background: var(--pink); }
+.proj-num.blue   { background: var(--blue); }
+.proj-num.purple { background: var(--purple); }
+.proj-num.tan    { background: var(--tan); }
+
+/* Box 01 — full width white */
+.proj-box-01 {
+  border: var(--border); box-shadow: var(--shadow-lg);
+  background: var(--white); padding: 32px 36px; margin-bottom: 16px;
+}
+.proj-box-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+}
+.proj-box-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; flex-shrink: 0;
+  border: var(--border); box-shadow: 3px 3px 0 var(--dark);
+  font-family: var(--heading); font-size: .85rem; background: var(--pink);
+}
+.proj-box-num.tan  { background: var(--tan); }
+.proj-box-num.blue { background: var(--blue); }
+.proj-box-label {
+  font-family: var(--heading); font-size: 1.15rem;
+}
+.proj-box-01 p {
+  font-size: .92rem; line-height: 1.8; color: #3a3028;
+}
+
+/* Boxes 02 + 03 side by side */
+.proj-boxes-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.proj-box-02, .proj-box-03 {
+  border: var(--border); box-shadow: var(--shadow-lg); padding: 28px 32px;
+}
+.proj-box-02 { background: var(--tan); }
+.proj-box-03 { background: var(--blue); }
+
+/* Override colour per project */
+.proj-box-02.pink   { background: var(--pink); }
+.proj-box-02.purple { background: var(--purple); }
+.proj-box-02.blue   { background: var(--blue); }
+.proj-box-02.tan    { background: var(--tan); }
+.proj-box-03.tan    { background: var(--tan); }
+.proj-box-03.purple { background: var(--purple); }
+.proj-box-03.pink   { background: var(--pink); }
+.proj-box-03.blue   { background: var(--blue); }
+
+.proj-box-items { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.proj-box-item {
+  background: var(--white); border: var(--border);
+  box-shadow: 3px 3px 0 var(--dark);
+  padding: 12px 16px; font-size: .86rem; line-height: 1.65; color: #2a2020;
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.proj-check {
+  flex-shrink: 0; width: 18px; height: 18px; margin-top: 1px;
+  opacity: .6;
+}
+
+@media(max-width:700px) {
+  .proj-boxes-row { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="sec-wrap" id="projects">
+  <div class="reveal">
+    <div class="banner-row">
+      <div class="banner-line"></div>
+      <div class="banner-label">My Work</div>
+    </div>
+    <div class="sec-title">Featured Projects</div>
+    <div class="sec-line"></div>
+  </div>
+
+  <!-- ── PROJECT 1: QR Payments ── -->
+  <div class="proj-section reveal">
+    <div class="proj-section-title" onclick="projToggle(this)">
+      <span class="proj-num pink">01</span>
+      Pay via QR — Scaling In-Store Digital Payments
+      <span class="proj-arrow">∨</span>
+    </div>
+    <div class="proj-section-body"><div class="proj-section-body-inner">
+
+
+    <div class="proj-box-01">
+      <div class="proj-box-header">
+        <span class="proj-box-num">01</span>
+        <span class="proj-box-label">It All Started When...</span>
+      </div>
+      <p>FairPrice Group served over 2 million customers across its retail stores — but had no way to digitally engage, grow, or monetise them. These customers transacted in-store and walked away, leaving no digital footprint. The opportunity was to bring them onto the FPG App by making their everyday retail transactions seamless, embedding loyalty directly into the payment experience. The goal wasn't just a payment feature — it was to build a digitally connected customer base at scale.</p>
+    </div>
+
+    <div class="proj-boxes-row">
+      <div class="proj-box-02 tan">
+        <div class="proj-box-header">
+          <span class="proj-box-num tan">02</span>
+          <span class="proj-box-label">Aditi's Role</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item">Owned end-to-end product strategy and UX redesign of the POS-integrated QR payment flow on the FPG App.</div>
+          <div class="proj-box-item">Collaborated with engineering, retail ops, and POS vendors to ensure seamless integration across hundreds of store touchpoints.</div>
+          <div class="proj-box-item">Drove iterative experimentation on the payment UX to reduce friction and increase adoption.</div>
+        </div>
+      </div>
+      <div class="proj-box-03 blue">
+        <div class="proj-box-header">
+          <span class="proj-box-num blue">03</span>
+          <span class="proj-box-label">Results</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>1.8 million customers digitally connected to FairPrice Group</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>1 million weekly active users on the FPG App — an engaged base to grow and monetise</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>~29% of all in-store transactions via QR, ~90% retention, CSAT 4.6</div>
+        </div>
+      </div>
+    </div>
+    </div></div>
+  </div>
+
+  <!-- ── PROJECT 2: Growth & Engagement Engine ── -->
+  <div class="proj-section reveal">
+    <div class="proj-section-title" onclick="projToggle(this)">
+      <span class="proj-num purple">02</span>
+      Building a Growth &amp; Engagement Engine — Vouchers, Gamification &amp; Personalisation
+      <span class="proj-arrow">∨</span>
+    </div>
+    <div class="proj-section-body"><div class="proj-section-body-inner">
+
+    <div class="proj-box-01">
+      <div class="proj-box-header">
+        <span class="proj-box-num purple" style="background:var(--purple)">01</span>
+        <span class="proj-box-label">It All Started When...</span>
+      </div>
+      <p>FairPrice Group had a growing digital customer base but was relying on blunt, discount-led promotions that generated low loyalty and poor retention. Vouchers were fragmented — customers missed eligible offers or dropped off between claim and apply. And there was no scalable engagement mechanic to keep customers coming back. The opportunity was to build a smarter, more connected growth engine: evolving vouchers into an intelligent conversion platform and layering in gamification to make the FPG digital experience genuinely engaging and habit-forming.</p>
+    </div>
+
+    <div class="proj-boxes-row">
+      <div class="proj-box-02 tan">
+        <div class="proj-box-header">
+          <span class="proj-box-num tan">02</span>
+          <span class="proj-box-label">Aditi's Role</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item">Led end-to-end redesign of the voucher platform — improving discovery, personalisation, claim, apply and redemption flows across all digital touchpoints to reduce drop-off and increase conversion.</div>
+          <div class="proj-box-item">Launched and scaled a personalised gamification platform supporting engagement mechanics, reward journeys, and promotional personalisation for customers across the FPG App.</div>
+          <div class="proj-box-item">Drove iterative A/B experimentation across both voucher and gamification journeys, partnering with data and marketing teams to build personalisation logic and measure ROI on promotional spend.</div>
+        </div>
+      </div>
+      <div class="proj-box-03 blue">
+        <div class="proj-box-header">
+          <span class="proj-box-num blue">03</span>
+          <span class="proj-box-label">Results</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>15% growth in user acquisition and 10% uplift in retention via optimised voucher journeys</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>300K+ customers engaged on the gamification platform, delivering 2.6x ROI on promotional spend</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>20% increase in WAU — an engaged base ready to grow and monetise</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Vouchers evolved from passive discounts into a scalable, measurable conversion engine</div>
+        </div>
+      </div>
+    </div>
+    </div></div>
+  </div>
+
+  <!-- ── PROJECT 3: Checkout CRO ── -->
+  <div class="proj-section reveal">
+    <div class="proj-section-title" onclick="projToggle(this)">
+      <span class="proj-num blue">03</span>
+      Checkout CRO — ~$3M GMV Recovery
+      <span class="proj-arrow">∨</span>
+    </div>
+    <div class="proj-section-body"><div class="proj-section-body-inner">
+
+
+    <div class="proj-box-01">
+      <div class="proj-box-header">
+        <span class="proj-box-num blue">01</span>
+        <span class="proj-box-label">It All Started When...</span>
+      </div>
+      <p>FairPrice Group's digital checkout was losing significant revenue to payment failures and drop-offs. With ~5 million transactions processed monthly across the platform, even small failure rates translated to material GMV loss — creating a clear opportunity for data-led conversion rate optimisation.</p>
+    </div>
+
+    <div class="proj-boxes-row">
+      <div class="proj-box-02 purple">
+        <div class="proj-box-header">
+          <span class="proj-box-num purple" style="background:var(--purple)">02</span>
+          <span class="proj-box-label">Aditi's Role</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item">Led a data-driven CRO strategy across the full digital checkout funnel using Amplitude and BigQuery to diagnose failure points.</div>
+          <div class="proj-box-item">Coordinated with payment gateway partners, engineering, and QA to systematically eliminate failure categories.</div>
+          <div class="proj-box-item">Ran A/B experiments on checkout flows, error messaging, and retry logic to improve recovery rates.</div>
+        </div>
+      </div>
+      <div class="proj-box-03 tan">
+        <div class="proj-box-header">
+          <span class="proj-box-num tan">03</span>
+          <span class="proj-box-label">Results</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>45% reduction in payment failures across digital checkout</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>~$3M GMV uplift from recovered transactions</div>
+        </div>
+      </div>
+    </div>
+    </div></div>
+  </div>
+
+  <!-- ── PROJECT 4: Trust Bank ── -->
+  <div class="proj-section reveal">
+    <div class="proj-section-title" onclick="projToggle(this)">
+      <span class="proj-num blue">04</span>
+      Trust Bank Singapore — Tech Integration (NTUC × SCB JV)
+      <span class="proj-arrow">∨</span>
+    </div>
+    <div class="proj-section-body"><div class="proj-section-body-inner">
+
+
+    <div class="proj-box-01">
+      <div class="proj-box-header">
+        <span class="proj-box-num blue">01</span>
+        <span class="proj-box-label">It All Started When...</span>
+      </div>
+      <p>NTUC and Standard Chartered Singapore launched Trust Bank — Singapore's first digital bank. As part of the JV, FairPrice Group needed to integrate its loyalty, promotions, POS, and payment systems with Trust Bank's platform. The complexity was significant: multiple live systems, cross-organisational dependencies, and a high-visibility public launch.</p>
+    </div>
+
+    <div class="proj-boxes-row">
+      <div class="proj-box-02 purple">
+        <div class="proj-box-header">
+          <span class="proj-box-num purple" style="background:var(--purple)">02</span>
+          <span class="proj-box-label">Aditi's Role</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item">Spearheaded the FairPrice Group tech workstream, managing the end-to-end integration roadmap across loyalty, offers, promotions, POS, and payment systems.</div>
+          <div class="proj-box-item">Coordinated across engineering, commercial, and compliance teams on both the FPG and Trust Bank sides to align timelines and deliverables.</div>
+          <div class="proj-box-item">Maintained visibility and stakeholder communication across senior leadership during a highly scrutinised, public-facing launch.</div>
+        </div>
+      </div>
+      <div class="proj-box-03 tan">
+        <div class="proj-box-header">
+          <span class="proj-box-num tan">03</span>
+          <span class="proj-box-label">Results</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Successfully delivered multi-system integration across loyalty, POS, promotions, and payments for Singapore's first digital bank launch</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Seamless go-live with no critical integration failures at launch</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Recognised with the BUILD Award for program execution excellence</div>
+        </div>
+      </div>
+    </div>
+    </div></div>
+  </div>
+
+  <!-- ── PROJECT 5: RemitSend ── -->
+  <div class="proj-section reveal">
+    <div class="proj-section-title" onclick="projToggle(this)">
+      <span class="proj-num pink">05</span>
+      RemitSend — B2B Cross-Border Remittance Launch
+      <span class="proj-arrow">∨</span>
+    </div>
+    <div class="proj-section-body"><div class="proj-section-body-inner">
+
+
+    <div class="proj-box-01">
+      <div class="proj-box-header">
+        <span class="proj-box-num pink">01</span>
+        <span class="proj-box-label">It All Started When...</span>
+      </div>
+      <p>MatchMove Pay identified a gap in the market for a B2B cross-border remittance product targeting SMEs in Singapore. Traditional remittance channels were slow, expensive, and operationally heavy. The challenge was to build and launch RemitSend — a new product from scratch — within 100 days, onboard SMEs rapidly, and achieve meaningful transaction volume.</p>
+    </div>
+
+    <div class="proj-boxes-row">
+      <div class="proj-box-02 tan">
+        <div class="proj-box-header">
+          <span class="proj-box-num tan">02</span>
+          <span class="proj-box-label">Aditi's Role</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item">Spearheaded the end-to-end build and launch of RemitSend — owning product strategy, partner integrations, onboarding flows, and go-to-market execution.</div>
+          <div class="proj-box-item">Led BaaS platform enhancements including Virtual Accounts (FAST), instant MyInfo onboarding, and new remittance corridors to reduce funding costs.</div>
+          <div class="proj-box-item">Coordinated across compliance, engineering, and business teams to hit a 100-day launch deadline.</div>
+        </div>
+      </div>
+      <div class="proj-box-03 blue">
+        <div class="proj-box-header">
+          <span class="proj-box-num blue">03</span>
+          <span class="proj-box-label">Results</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>500 SMEs onboarded and SGD 2M in transactional volume in first 4 months</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>~95% reduction in funding cost via Virtual Accounts (FAST) integration</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Won Supersquad Team Award for successful launch in 100 days</div>
+        </div>
+      </div>
+    </div>
+    </div></div>
+  </div>
+
+
+  <!-- ── PROJECT 6: Home Credit ── -->
+  <div class="proj-section reveal">
+    <div class="proj-section-title" onclick="projToggle(this)">
+      <span class="proj-num tan">06</span>
+      Building BNPL Products for India's Unbanked
+      <span class="proj-arrow">∨</span>
+    </div>
+    <div class="proj-section-body"><div class="proj-section-body-inner">
+
+    <div class="proj-box-01">
+      <div class="proj-box-header">
+        <span class="proj-box-num tan">01</span>
+        <span class="proj-box-label">It All Started When...</span>
+      </div>
+      <p>Home Credit India was on a mission to bring financial inclusion to the unbanked and underbanked population in India's offline market. Traditional credit products were inaccessible to new-to-credit consumers, and existing collections and engagement models were inefficient. The challenge was to design BNPL products that were simple enough for first-time credit users, profitable at scale, and supported by strong retention and collections infrastructure — all across a three-pillar strategy: new revenue channels, consumer and merchant loyalty, and optimised cash flow.</p>
+    </div>
+
+    <div class="proj-boxes-row">
+      <div class="proj-box-02 purple">
+        <div class="proj-box-header">
+          <span class="proj-box-num purple" style="background:var(--purple)">02</span>
+          <span class="proj-box-label">Aditi's Role</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item">Owned end-to-end product strategy for a portfolio of BNPL products — including a revolving EMI card for new-to-credit users, co-lending partnerships with banks, and telecom postpaid BNPL bundles.</div>
+          <div class="proj-box-item">Built a customer rewards engine and led a consumer app revamp (Aadhaar-based KYC, improved ledger, chatbot) to deepen engagement and reduce service costs.</div>
+          <div class="proj-box-item">Integrated payment gateways for instalment collection to streamline cash flow and reduce delayed payments across the portfolio.</div>
+        </div>
+      </div>
+      <div class="proj-box-03 pink">
+        <div class="proj-box-header">
+          <span class="proj-box-num pink">03</span>
+          <span class="proj-box-label">Results</span>
+        </div>
+        <div class="proj-box-items">
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>50K users onboarded on revolving EMI card in 3 months, ~60% utilisation rate</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>₹170 net revenue per transaction via co-lending partnerships, ~13% risk reduction</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>7% increase in MAU and 4% reduction in customer service calls from app revamp</div>
+          <div class="proj-box-item"><svg class="proj-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>~10% improvement in cash flow efficiency via payment gateway integration</div>
+        </div>
+      </div>
+    </div>
+    </div></div>
+  </div>
+
+
+
+</div>
+
+<div class="sec-wrap" id="about">
+  <div class="reveal">
+    <div class="banner-row">
+      <div class="banner-line"></div>
+      <div class="banner-label">Who Am I?</div>
+    </div>
+    <div class="sec-title">About Aditi</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="grid-3">
+    <div class="a-card blue reveal">
+      <div class="a-header">
+        <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>Education</h3>
+      </div>
+      <div class="a-body">
+        <div class="a-item">
+          <div class="a-item-title">Post Graduate Diploma in Management (MBA)</div>
+          <div class="a-item-sub">Management Development Institute · 2013–2015 · CGPA 7.12/10</div>
+        </div>
+        <div class="a-item">
+          <div class="a-item-title">B.Tech (Honors) in Computer Science</div>
+          <div class="a-item-sub">Uttar Pradesh Technical University · 2006–2010 · CGPA 79.2/100</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="a-card pink reveal d1">
+      <div class="a-header">
+        <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3>Skills &amp; Tools</h3>
+      </div>
+      <div class="a-body">
+        <div class="a-item"><div class="a-item-title">Product Lifecycle Management</div><div class="a-item-sub">Conceptualization, Execution, Testing (Web &amp; App)</div></div>
+        <div class="a-item"><div class="a-item-title">Roadmapping &amp; Prioritization</div><div class="a-item-sub">Lean Experimentation, A/B Testing, Agile</div></div>
+        <div class="a-item"><div class="a-item-title">Data &amp; Analytics</div><div class="a-item-sub">Amplitude, BigQuery, Confluence, JIRA, GSuite</div></div>
+        <div class="a-item"><div class="a-item-title">Business Strategy</div><div class="a-item-sub">P&amp;L Ownership, Growth Hacking, Stakeholder Mgmt</div></div>
+      </div>
+    </div>
+
+    <div class="a-card tan reveal d2">
+      <div class="a-header">
+        <div class="icon-box"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>Fun Facts</h3>
+      </div>
+      <div class="a-body">
+        <div class="a-item"><div class="a-item-row"><span>👶</span><span class="a-item-title">Mother of a 5-year-old</span></div></div>
+        <div class="a-item"><div class="a-item-row"><span>🌏</span><span class="a-item-title">Worked across Singapore &amp; India</span></div></div>
+        <div class="a-item"><div class="a-item-row"><span>🏊</span><span class="a-item-title">In progress: Learning swimming @ 37</span></div></div>
+        <div class="a-item"><div class="a-item-row"><span>🚗</span><span class="a-item-title">In progress: Learning driving @ 37</span></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── AWARDS ── -->
+<div class="sec-wrap">
+  <div class="reveal">
+    <div class="banner-row">
+      <div class="banner-line"></div>
+      <div class="banner-label">Recognition</div>
+    </div>
+    <div class="sec-title">Awards &amp; Honors</div>
+    <div class="sec-line"></div>
+  </div>
+  <div class="awards-grid">
+    <div class="award-card blue reveal">
+      <div class="award-emoji">🥇</div>
+      <div class="award-title">Rated Gold — Top 5%</div>
+      <div class="award-sub">FairPrice Group · 2022 &amp; 2024</div>
+    </div>
+    <div class="award-card pink reveal d1">
+      <div class="award-emoji">🏗️</div>
+      <div class="award-title">BUILD Award</div>
+      <div class="award-sub">FairPrice Group · 2024</div>
+      <div class="award-sub" style="font-size:.75rem;margin-top:4px;color:#3a3028;">For Trust Bank integration &amp; FairPrice Foundation Donation Campaigns (2024 &amp; 2025)</div>
+    </div>
+    <div class="award-card purple reveal d2">
+      <div class="award-emoji">💡</div>
+      <div class="award-title">Ideathon — Team Award</div>
+      <div class="award-sub">FairPrice Group · 2023</div>
+      <div class="award-sub" style="font-size:.75rem;margin-top:4px;color:#3a3028;">Idea: Subscription model for Pet Supplies on the FairPrice Group platform</div>
+    </div>
+    <div class="award-card tan reveal d3">
+      <div class="award-emoji">🚀</div>
+      <div class="award-title">Supersquad — Team Award</div>
+      <div class="award-sub">MatchMove Pay · 2020</div>
+      <div class="award-sub" style="font-size:.75rem;margin-top:4px;color:#3a3028;">For the successful launch of RemitSend, B2B cross-border remittance product, in just 100 days</div>
+    </div>
+    <div class="award-card pink reveal">
+      <div class="award-emoji">🏆</div>
+      <div class="award-title">Team Excellence — 150% KPI</div>
+      <div class="award-sub">Home Credit India · 2019</div>
+    </div>
+    <div class="award-card blue reveal d1">
+      <div class="award-emoji">⭐</div>
+      <div class="award-title">Best Performer &amp; Rising Star</div>
+      <div class="award-sub">Contata Solutions · 2011 &amp; 2012</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<div id="contact">
+  <div class="sec-wrap">
+    <div class="reveal">
+      <div class="banner-row">
+        <div class="banner-line"></div>
+        <div class="banner-label">Say Hello</div>
+      </div>
+      <div class="sec-title">Get In Touch</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="c-box reveal">
+      <h2>Let's Connect</h2>
+      <p>Open to Senior PM / Staff PM opportunities in Singapore. Require Letter of Consent only. Available to discuss ecommerce, agentic commerce, fintech, payments, platform products, or any exciting new challenges.</p>
+      <a href="/cdn-cgi/l/email-protection#fd9c9994898994d3cecdbd9a909c9491d39e9290" class="c-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="__cf_email__" data-cfemail="87e6e3eef3f3eea9b4b7c7e0eae6eeeba9e4e8ea">[email&#160;protected]</span>
+      </a>
+      <div class="socials">
+        <a href="tel:+6586727400" class="s-btn blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.1a16 16 0 0 0 6 6l.61-.61a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16z"/></svg>
+          +65 8672 7400
+        </a>
+        <a href="https://www.linkedin.com/in/aditi-rathi-43b9b619/" target="_blank" class="s-btn purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© 2025 Aditi Rathi. All rights reserved.</span>
+  <span>Staff PM · Ecommerce &amp; Payments · Singapore — <a href="#hero">Back to top ↑</a></span>
+</footer>
+
+
+<script>
+function projToggle(el) {
+  const section = el.closest('.proj-section');
+  if (section) section.classList.toggle('open');
+}
+
+function tlToggle(el) {
+  el.classList.toggle('collapsed');
+  const items = el.nextElementSibling;
+  items.classList.toggle('collapsed');
+}
+
+function toggleYear(el) {
+  const items = el.nextElementSibling;
+  el.classList.toggle('collapsed');
+  items.classList.toggle('collapsed');
+}
+
+document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.remove('hidden');
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+</script>
+</body>
+</html>
