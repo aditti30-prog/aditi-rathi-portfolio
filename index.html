@@ -78,7 +78,7 @@ nav {
   min-height: calc(100vh - 72px);
   max-width: 1300px; margin: 0 auto;
   padding: 60px 60px 80px;
-  display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: center;
+  display: flex; flex-direction: column; justify-content: center;
 }
 .tags { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
 .pill {
@@ -437,14 +437,6 @@ footer a { color: var(--pink); text-decoration: none; }
     <button class="scroll-btn" onclick="document.getElementById('expertise').scrollIntoView({behavior:'smooth'})">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a1410" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
     </button>
-  </div>
-  <div class="photo-col">
-    <div class="photo-frame">
-      <div class="photo-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        Your Photo
-      </div>
-    </div>
   </div>
 </section>
 
