@@ -368,23 +368,109 @@ footer a { color: var(--pink); text-decoration: none; }
 .d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
 
 /* RESPONSIVE */
+
+/* ── TABLET ── */
 @media(max-width:1024px){
-  .grid-4 { grid-template-columns: repeat(3,1fr) !important; }
+  .grid-4 { grid-template-columns: repeat(2,1fr) !important; }
   .awards-grid { grid-template-columns: repeat(2,1fr); }
-  .grid-3, .grid-3p { grid-template-columns: 1fr; }
-  #hero { grid-template-columns: 1fr; }
+  .grid-3, .grid-3p { grid-template-columns: 1fr 1fr; }
   .photo-col { display: none; }
 }
+
+/* ── MOBILE ── */
 @media(max-width:700px){
-  #hero, .sec-wrap, #contact { padding-left: 24px; padding-right: 24px; }
-  nav { padding: 0 24px; }
+  html, body { overflow-x: hidden; }
+
+  /* Nav */
+  nav { padding: 0 16px; height: 56px; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .grid-4, .awards-grid { grid-template-columns: 1fr; }
-  .hero-name { font-size: 3rem; }
-  footer { flex-direction: column; gap: 8px; text-align: center; padding: 20px 24px; }
-  .exp-header { flex-direction: column; align-items: flex-start; }
-  .exp-meta { align-items: flex-start; }
+  .mob-menu a { font-size: 1.6rem; }
+  .mob-menu { gap: 28px; }
+
+  /* Hero */
+  #hero { padding: 36px 16px 48px; min-height: auto; }
+  .hero-name { font-size: clamp(2.4rem, 12vw, 3.2rem); line-height: .95; margin-bottom: 14px; }
+  .hero-role { font-size: .78rem; margin-bottom: 12px; }
+  .hero-bio { font-size: .88rem; line-height: 1.7; }
+  .hero-contact { flex-direction: column; gap: 8px; margin-top: 20px; }
+  .hero-contact a { font-size: .75rem; padding: 9px 14px; width: 100%; justify-content: center; box-sizing: border-box; }
+  .scroll-btn { width: 40px; height: 40px; margin-top: 20px; }
+
+  /* Section wrappers */
+  .sec-wrap { padding: 40px 16px; }
+
+  /* Section headers */
+  .banner-row { margin-bottom: 28px; overflow: hidden; }
+  .banner-line { left: -16px; right: -16px; }
+  .sec-title { font-size: 1.6rem; margin-bottom: 8px; }
+  .sec-line { margin-bottom: 28px; }
+
+  /* Marquee */
+  .marquee-item { font-size: .72rem; padding: 0 16px; }
+
+  /* Expertise */
+  .grid-4 { grid-template-columns: 1fr !important; gap: 12px; }
+  .e-card { padding: 18px; }
+  .e-card h3 { font-size: .85rem; }
+  .e-card p { font-size: .82rem; }
+
+  /* Experience timeline */
+  .tl-toggle { font-size: .8rem; padding: 9px 12px; width: 100%; box-sizing: border-box; }
+  .tl-count { display: none; }
+  .tl-items { margin-left: 10px; padding: 8px 0 2px; }
+  .tl-dot { width: 10px; height: 10px; margin-left: -5px; margin-right: 12px; margin-top: 14px; }
+  .tl-card { padding: 12px 14px; }
+  .tl-card-name { font-size: .9rem; }
+  .tl-card-summary { font-size: .8rem; }
+  .tl-tag { font-size: .62rem; padding: 2px 7px; }
+
+  /* Projects */
+  .proj-section { margin-bottom: 6px; }
+  .proj-section-title { font-size: .8rem; padding: 12px 12px; gap: 8px; }
+  .proj-num { width: 32px; height: 32px; font-size: .7rem; flex-shrink: 0; }
+  .proj-arrow { width: 26px; height: 26px; font-size: .65rem; flex-shrink: 0; }
+  .proj-section-body-inner { padding: 0 10px 16px; }
+  .proj-box-01 { padding: 14px 12px; margin-bottom: 10px; }
+  .proj-box-01 p { font-size: .82rem; }
+  .proj-box-header { gap: 10px; margin-bottom: 12px; }
+  .proj-box-num { width: 32px; height: 32px; font-size: .7rem; }
+  .proj-box-label { font-size: .85rem; }
+  .proj-boxes-row { grid-template-columns: 1fr; gap: 10px; }
+  .proj-box-02, .proj-box-03 { padding: 14px 12px; }
+  .proj-box-item { font-size: .8rem; padding: 9px 10px; }
+
+  /* About */
+  .grid-3 { grid-template-columns: 1fr; gap: 12px; }
+  .a-header { padding: 14px 16px; }
+  .a-body { padding: 10px; gap: 8px; }
+  .a-item { padding: 9px 12px; }
+  .a-item-title { font-size: .82rem; }
+  .a-item-sub { font-size: .72rem; }
+
+  /* Awards */
+  .awards-grid { grid-template-columns: 1fr; gap: 10px; }
+  .award-card { padding: 16px 18px; }
+  .award-title { font-size: .82rem; }
+
+  /* Articles carousel */
+  .article-card { min-width: 240px; max-width: 240px; }
+  .article-title { font-size: .84rem; }
+  .article-summary { font-size: .78rem; }
+  .carousel-nav { margin-top: 12px; }
+
+  /* Contact — fix both outer and inner padding */
+  #contact { padding: 40px 16px; }
+  #contact .sec-wrap { padding: 0; }
+  .c-box { padding: 28px 16px; max-width: 100%; }
+  .c-box h2 { font-size: 1.4rem; }
+  .c-box p { font-size: .85rem; }
+  .c-btn { font-size: .78rem; padding: 12px 20px; width: 100%; justify-content: center; box-sizing: border-box; }
+  .socials { gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .s-btn { font-size: .68rem; padding: 8px 10px; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 6px; text-align: center; padding: 14px 16px; font-size: .7rem; }
 }
 </style>
 </head>
@@ -781,9 +867,7 @@ footer a { color: var(--pink); text-decoration: none; }
   opacity: .6;
 }
 
-@media(max-width:700px) {
-  .proj-boxes-row { grid-template-columns: 1fr; }
-}
+
 </style>
 
 <div class="sec-wrap" id="projects">
@@ -1280,6 +1364,18 @@ footer a { color: var(--pink); text-decoration: none; }
         </div>
       </a>
 
+      <a href="https://www.linkedin.com/pulse/checkout-should-one-size-fits-all-aditi-rathi-navmc/" target="_blank" class="article-card">
+        <div class="article-img" style="background:var(--tan);">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="article-body">
+          <div class="article-tag">Checkout</div>
+          <h3 class="article-title">Should Checkout Be One-Size-Fits-All?</h3>
+          <p class="article-summary">Why a single checkout experience doesn't serve all customers equally — and how personalising the checkout flow by segment, context, and intent can unlock meaningful conversion gains.</p>
+          <span class="article-read">Read on LinkedIn →</span>
+        </div>
+      </a>
+
     </div>
     <div class="carousel-nav">
       <button class="carousel-btn" onclick="scrollCarousel(-1)">←</button>
@@ -1327,29 +1423,55 @@ footer a { color: var(--pink); text-decoration: none; }
 </footer>
 
 
+
 <script>
 function scrollCarousel(dir) {
   const c = document.getElementById('articlesCarousel');
-  c.scrollBy({ left: dir * 320, behavior: 'smooth' });
+  if (c) c.scrollBy({ left: dir * 320, behavior: 'smooth' });
 }
 
-// Drag to scroll
-const carousel = document.getElementById('articlesCarousel');
-if (carousel) {
-  let isDown = false, startX, scrollLeft;
-  carousel.addEventListener('mousedown', e => {
-    isDown = true; carousel.classList.add('grabbing');
-    startX = e.pageX - carousel.offsetLeft;
-    scrollLeft = carousel.scrollLeft;
+document.addEventListener('DOMContentLoaded', function() {
+  // Drag to scroll carousel
+  const carousel = document.getElementById('articlesCarousel');
+  if (carousel) {
+    let isDown = false, startX, scrollLeft;
+    carousel.addEventListener('mousedown', e => {
+      isDown = true;
+      carousel.classList.add('grabbing');
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+    });
+    carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('grabbing'); });
+    carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('grabbing'); });
+    carousel.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      carousel.scrollLeft = scrollLeft - (x - startX);
+    });
+  }
+
+  // Scroll reveal
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.remove('hidden');
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Smooth scroll nav
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
   });
-  carousel.addEventListener('mouseleave', () => { isDown = false; carousel.classList.remove('grabbing'); });
-  carousel.addEventListener('mouseup', () => { isDown = false; carousel.classList.remove('grabbing'); });
-  carousel.addEventListener('mousemove', e => {
-    if (!isDown) return; e.preventDefault();
-    const x = e.pageX - carousel.offsetLeft;
-    carousel.scrollLeft = scrollLeft - (x - startX);
-  });
-}
+});
 
 function projToggle(el) {
   const section = el.closest('.proj-section');
@@ -1359,35 +1481,14 @@ function projToggle(el) {
 function tlToggle(el) {
   el.classList.toggle('collapsed');
   const items = el.nextElementSibling;
-  items.classList.toggle('collapsed');
+  if (items) items.classList.toggle('collapsed');
 }
 
 function toggleYear(el) {
   const items = el.nextElementSibling;
   el.classList.toggle('collapsed');
-  items.classList.toggle('collapsed');
+  if (items) items.classList.toggle('collapsed');
 }
-
-document.querySelectorAll('.reveal').forEach(el => el.classList.add('hidden'));
-
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.remove('hidden');
-      e.target.classList.add('visible');
-      obs.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
 </script>
 </body>
 </html>
