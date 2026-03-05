@@ -1,1 +1,18 @@
-Turn screenshots into caledar events
+# Snap2Calendar
+
+A colorful, playful web app that converts chat screenshots into Google Calendar events instantly.
+
+🔗 **Live App:** [https://snapshot-to-sync.lovable.app](https://snapshot-to-sync.lovable.app)
+
+## How it works
+1. Upload a screenshot of a conversation
+2. AI extracts the meeting details automatically
+3. Click "Open in Google Calendar" to create the event
+
+No login required. No sign-up needed.
+
+## Tech Stack
+- React + TypeScript + Vite
+- Tailwind CSS
+- Gemini Vision AI for extraction
+- Google Calendar link generation
